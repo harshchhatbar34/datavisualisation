@@ -25,9 +25,6 @@ class RandomWalk():
             y_distance = choice([0, 1, 2, 3, 4])
             y_step = y_direction * y_distance
 
-            # Reject moves that go nowhere.
-            if x_step == 0 and y_step == 0:
-                continue
 
             # Calculate the next x and y values.
             next_x = self.x_value[-1] + x_step
@@ -36,11 +33,15 @@ class RandomWalk():
             self.x_value.append(next_x)
             self.y_value.append(next_y)
 
-# hk = RandomWalk(40)
-# hk.fill_walk()
-#
-# plt.scatter(hk.x_value, hk.y_value, s=20)
-# plt.show()
+
+hk = RandomWalk(40)
+hk.fill_walk()
+
+plt.scatter(hk.x_value, hk.y_value, s=20)
+plt.show()
+
+
+
 
 
 
